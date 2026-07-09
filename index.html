@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
   <title>Ilyas Mohaimel | Frost</title>
   <meta
     name="description"
@@ -27,18 +28,19 @@
 <body>
   <header class="site-header" id="home">
     <a class="header-identity" href="#home" aria-label="Ilyas Mohaimel home">
-      <span>SYSTEMS BUILDER</span>
-      <span>DIGITAL CREATOR</span>
+      <span data-en="SYSTEMS BUILDER" data-fr="CONSTRUCTEUR SYSTEMES">SYSTEMS BUILDER</span>
+      <span data-en="DIGITAL CREATOR" data-fr="CREATEUR DIGITAL">DIGITAL CREATOR</span>
     </a>
     <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
     </button>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#home">HOME</a>
-      <a href="#work">WORK</a>
-      <a href="#process">PROCESS</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#home" data-en="HOME" data-fr="ACCUEIL">HOME</a>
+      <a href="./work.html" data-en="WORK" data-fr="TRAVAUX">WORK</a>
+      <a href="#process" data-en="PROCESS" data-fr="PROCESSUS">PROCESS</a>
+      <a href="#contact" data-en="CONTACT" data-fr="CONTACT">CONTACT</a>
+      <button class="lang-toggle" type="button" data-language-toggle aria-label="Switch to French">FR</button>
     </nav>
   </header>
 
@@ -46,18 +48,17 @@
     <section class="hero section-panel" aria-labelledby="hero-title">
       <div class="poster-word" aria-hidden="true">PORTFOLIO</div>
       <div class="hero-copy reveal">
-        <p class="micro-label">SYSTEMS BUILDER / DIGITAL CREATOR</p>
-        <p class="hello-line">Hello, I'm</p>
+        <p class="micro-label" data-en="SYSTEMS BUILDER / DIGITAL CREATOR" data-fr="CONSTRUCTEUR SYSTEMES / CREATEUR DIGITAL">SYSTEMS BUILDER / DIGITAL CREATOR</p>
+        <p class="hello-line" data-en="Hello, I'm" data-fr="Bonjour, je suis">Hello, I'm</p>
         <h1 id="hero-title">ILYAS<br>MOHAIMEL</h1>
-        <p class="role">BUILDER, TROUBLESHOOTER &amp; SELF-TAUGHT SYSTEMS NERD</p>
-        <p class="hero-text">
-          I spend most of my time around Linux, self-hosting, AI workflows,
-          troubleshooting, and figuring out how systems behave when they stop cooperating.
+        <p class="role" data-en="BUILDER, TROUBLESHOOTER &amp; SELF-TAUGHT SYSTEMS NERD" data-fr="CONSTRUCTEUR, DEPANNEUR &amp; AUTODIDACTE SYSTEMES">BUILDER, TROUBLESHOOTER &amp; SELF-TAUGHT SYSTEMS NERD</p>
+        <p class="hero-text" data-en="I spend most of my time around Linux, self-hosting, AI workflows, troubleshooting, and figuring out how systems behave when they stop cooperating." data-fr="Je passe beaucoup de temps avec Linux, l'auto-hebergement, les workflows IA, le depannage, et la comprehension du comportement des systemes quand ils arretent de cooperer.">
+          I spend most of my time around Linux, self-hosting, AI workflows, troubleshooting, and figuring out how systems behave when they stop cooperating.
         </p>
-        <p class="location-line">BASED IN CASABLANCA, MOROCCO</p>
+        <p class="location-line" data-en="BASED IN CASABLANCA, MOROCCO" data-fr="BASE A CASABLANCA, MAROC">BASED IN CASABLANCA, MOROCCO</p>
         <div class="hero-actions" aria-label="Hero actions">
-          <a class="button primary" href="#work">VIEW SELECTED WORK</a>
-          <a class="button secondary" href="#contact">CONTACT ME</a>
+          <a class="button primary" href="#work" data-en="VIEW SELECTED WORK" data-fr="VOIR LES PROJETS">VIEW SELECTED WORK</a>
+          <a class="button secondary" href="#contact" data-en="CONTACT ME" data-fr="ME CONTACTER">CONTACT ME</a>
         </div>
       </div>
 
@@ -68,27 +69,27 @@
       <aside class="quick-facts reveal" aria-label="Quick facts">
         <div class="fact">
           <strong>6+</strong>
-          <span>YEARS LINUX EXPERIENCE</span>
+          <span data-en="YEARS LINUX EXPERIENCE" data-fr="ANS D'EXPERIENCE LINUX">YEARS LINUX EXPERIENCE</span>
         </div>
         <div class="fact">
           <strong>120</strong>
-          <span>DET SCORE</span>
+          <span data-en="DET SCORE" data-fr="SCORE DET">DET SCORE</span>
         </div>
         <div class="fact">
           <strong>2026</strong>
-          <span>CS DEGREE PATH</span>
+          <span data-en="CS DEGREE PATH" data-fr="PARCOURS INFORMATIQUE">CS DEGREE PATH</span>
         </div>
         <div class="fact">
           <strong>CASA</strong>
-          <span>MOROCCO BASED</span>
+          <span data-en="MOROCCO BASED" data-fr="BASE AU MAROC">MOROCCO BASED</span>
         </div>
       </aside>
     </section>
 
     <section class="work section-panel reveal" id="work" aria-labelledby="work-title">
       <div class="section-bar">
-        <h2 id="work-title">SELECTED WORK</h2>
-        <a href="#contact">VIEW ALL WORK <span aria-hidden="true">-></span></a>
+        <h2 id="work-title" data-en="SELECTED WORK" data-fr="PROJETS SELECTIONNES">SELECTED WORK</h2>
+        <a href="./work.html" data-en="VIEW ALL WORK ->" data-fr="VOIR TOUS LES TRAVAUX ->">VIEW ALL WORK -&gt;</a>
       </div>
       <div class="project-grid">
         <article class="project-card">
@@ -104,11 +105,10 @@
               <h3>AUTOMATED MORNING BRIEF</h3>
               <p>Automation / Homelab / AI Workflow</p>
             </div>
-            <span class="project-arrow" aria-hidden="true">-></span>
+            <span class="project-arrow" aria-hidden="true">-&gt;</span>
           </div>
-          <p class="project-description">
-            A daily system running through my home server that pulls together weather,
-            tech news, gaming updates, Steam deals, and a personalized note.
+          <p class="project-description" data-en="A daily system running through my home server that pulls together weather, tech news, gaming updates, Steam deals, and a personalized note." data-fr="Un systeme quotidien sur mon serveur maison qui rassemble la meteo, l'actualite tech, les jeux, les offres Steam et une note personnalisee.">
+            A daily system running through my home server that pulls together weather, tech news, gaming updates, Steam deals, and a personalized note.
           </p>
         </article>
 
@@ -125,11 +125,10 @@
               <h3>FROSTSERVER</h3>
               <p>Self-hosting / Systems / Debugging</p>
             </div>
-            <span class="project-arrow" aria-hidden="true">-></span>
+            <span class="project-arrow" aria-hidden="true">-&gt;</span>
           </div>
-          <p class="project-description">
-            My home server setup for self-hosted services, experiments, scripts,
-            and the kind of debugging that happens when a system becomes part of daily life.
+          <p class="project-description" data-en="My home server setup for self-hosted services, experiments, scripts, and the kind of debugging that happens when a system becomes part of daily life." data-fr="Mon serveur maison pour des services auto-heberges, des experiences, des scripts et le depannage qui arrive quand un systeme fait partie du quotidien.">
+            My home server setup for self-hosted services, experiments, scripts, and the kind of debugging that happens when a system becomes part of daily life.
           </p>
         </article>
 
@@ -144,160 +143,153 @@
             <span class="project-number">03</span>
             <div>
               <h3>DET PRACTICE APP</h3>
-              <p>React / Study Tool / English</p>
+              <p>Study Tool / English</p>
             </div>
-            <span class="project-arrow" aria-hidden="true">-></span>
+            <span class="project-arrow" aria-hidden="true">-&gt;</span>
           </div>
-          <p class="project-description">
-            A React-based practice tool for the Duolingo English Test, aimed at
-            cutting friction out of studying and making practice easier to repeat.
+          <p class="project-description" data-en="A practice tool for the Duolingo English Test, aimed at cutting friction out of studying and making practice easier to repeat." data-fr="Un outil d'entrainement pour le Duolingo English Test, pense pour rendre la pratique plus simple et plus facile a repeter.">
+            A practice tool for the Duolingo English Test, aimed at cutting friction out of studying and making practice easier to repeat.
           </p>
         </article>
       </div>
     </section>
 
-    <section class="lower-grid section-panel reveal" id="process" aria-label="Education, skills, process, and quote">
+    <section class="lower-grid section-panel reveal" id="process" aria-label="Education, skills, process, and note">
       <article class="education-block">
-        <h2>EDUCATION &amp; SKILLS</h2>
+        <h2 data-en="EDUCATION &amp; SKILLS" data-fr="FORMATION &amp; COMPETENCES">EDUCATION &amp; SKILLS</h2>
         <div class="sub-block">
-          <h3>EDUCATION</h3>
+          <h3 data-en="EDUCATION" data-fr="FORMATION">EDUCATION</h3>
           <div class="timeline-row">
-            <span>Computer Science / Software Engineering</span>
-            <strong>Starting September 2026 - China</strong>
+            <span data-en="Computer Science / Software Engineering" data-fr="Informatique / Genie logiciel">Computer Science / Software Engineering</span>
+            <strong data-en="Starting September 2026 - China" data-fr="Debut septembre 2026 - Chine">Starting September 2026 - China</strong>
           </div>
           <div class="timeline-row">
-            <span>English Proficiency</span>
-            <strong>Duolingo English Test - 120</strong>
+            <span data-en="English Proficiency" data-fr="Niveau d'anglais">English Proficiency</span>
+            <strong data-en="Duolingo English Test - 120" data-fr="Duolingo English Test - 120">Duolingo English Test - 120</strong>
           </div>
           <div class="timeline-row">
-            <span>Self-taught Linux &amp; Systems</span>
-            <strong>6+ years daily hands-on use</strong>
+            <span data-en="Self-taught Linux &amp; Systems" data-fr="Linux &amp; systemes en autodidacte">Self-taught Linux &amp; Systems</span>
+            <strong data-en="6+ years daily hands-on use" data-fr="6+ ans d'utilisation quotidienne">6+ years daily hands-on use</strong>
           </div>
         </div>
         <div class="sub-block">
-          <h3>SKILLS</h3>
+          <h3 data-en="SKILLS" data-fr="COMPETENCES">SKILLS</h3>
           <div class="skills-list" aria-label="Skills">
             <span>Linux</span><span>Self-hosting</span><span>AI Workflows</span>
-            <span>Troubleshooting</span><span>React</span><span>JavaScript</span>
-            <span>Java</span><span>Automation</span><span>Homelab</span>
+            <span>Troubleshooting</span><span>Automation</span><span>Homelab</span>
             <span>Windows</span><span>Android</span><span>Hardware Repair</span>
             <span>System Tuning</span><span>GitHub</span><span>Web Tools</span>
-            <span>Prompting</span><span>OpenClaw</span><span>Debugging</span>
+            <span>Prompting</span><span>Debugging</span>
           </div>
         </div>
       </article>
 
       <article class="process-block">
-        <h2>WORK PROCESS</h2>
+        <h2 data-en="WORK PROCESS" data-fr="PROCESSUS">WORK PROCESS</h2>
         <ol class="process-list">
           <li>
             <span class="process-number">01</span>
             <span class="process-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="m15 15 5 5"></path></svg>
             </span>
-            <div><h3>DISCOVER</h3><p>Understand the problem, goal, constraints, and what actually needs to work.</p></div>
+            <div><h3 data-en="DISCOVER" data-fr="COMPRENDRE">DISCOVER</h3><p data-en="Understand the problem, goal, constraints, and what actually needs to work." data-fr="Comprendre le probleme, l'objectif, les contraintes, et ce qui doit vraiment fonctionner.">Understand the problem, goal, constraints, and what actually needs to work.</p></div>
           </li>
           <li>
             <span class="process-number">02</span>
             <span class="process-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M9 3h6"></path><path d="M10 3v5l-5 9a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 17l-5-9V3"></path></svg>
             </span>
-            <div><h3>TEST</h3><p>Break things down, try practical approaches, and learn from what fails.</p></div>
+            <div><h3 data-en="TEST" data-fr="TESTER">TEST</h3><p data-en="Break things down, try practical approaches, and learn from what fails." data-fr="Decomposer, essayer des approches pratiques, et apprendre de ce qui echoue.">Break things down, try practical approaches, and learn from what fails.</p></div>
           </li>
           <li>
             <span class="process-number">03</span>
             <span class="process-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3"></path><path d="m16 9 4 3-4 3"></path><path d="m14 5-4 14"></path></svg>
             </span>
-            <div><h3>BUILD</h3><p>Create the system, website, workflow, tool, or fix with a clean structure.</p></div>
+            <div><h3 data-en="BUILD" data-fr="CONSTRUIRE">BUILD</h3><p data-en="Create the system, website, workflow, tool, or fix with a clean structure." data-fr="Creer le systeme, le site, le workflow, l'outil ou la correction avec une structure propre.">Create the system, website, workflow, tool, or fix with a clean structure.</p></div>
           </li>
           <li>
             <span class="process-number">04</span>
             <span class="process-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="m14 7 3 3"></path><path d="M5 19 16.5 7.5a2.1 2.1 0 0 1 3 3L8 22H5z"></path></svg>
             </span>
-            <div><h3>DEBUG</h3><p>Find edge cases, errors, performance issues, and weak points.</p></div>
+            <div><h3 data-en="DEBUG" data-fr="DEPANNER">DEBUG</h3><p data-en="Find edge cases, errors, performance issues, and weak points." data-fr="Trouver les cas limites, les erreurs, les problemes de performance et les points faibles.">Find edge cases, errors, performance issues, and weak points.</p></div>
           </li>
           <li>
             <span class="process-number">05</span>
             <span class="process-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
             </span>
-            <div><h3>IMPROVE</h3><p>Polish, optimize, document, and make the result usable in real life.</p></div>
+            <div><h3 data-en="IMPROVE" data-fr="AMELIORER">IMPROVE</h3><p data-en="Polish, optimize, document, and make the result usable in real life." data-fr="Polir, optimiser, documenter, et rendre le resultat utilisable dans la vraie vie.">Polish, optimize, document, and make the result usable in real life.</p></div>
           </li>
         </ol>
       </article>
 
       <article class="quote-card">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p>Good systems are not just about how they look, but how reliably they work.</p>
+        <span class="quote-mark" aria-hidden="true">+</span>
+        <p data-en="I care about useful systems: clear enough to understand, reliable enough to trust, and personal enough to feel worth using." data-fr="J'aime les systemes utiles : assez clairs pour etre compris, assez fiables pour etre dignes de confiance, et assez personnels pour donner envie de les utiliser.">
+          I care about useful systems: clear enough to understand, reliable enough to trust, and personal enough to feel worth using.
+        </p>
         <strong>Frost</strong>
-        <span>LET'S BUILD<br>SOMETHING USEFUL<br>TOGETHER.</span>
+        <span data-en="LET'S BUILD&lt;br&gt;SOMETHING USEFUL&lt;br&gt;TOGETHER." data-fr="CONSTRUISONS&lt;br&gt;QUELQUE CHOSE D'UTILE&lt;br&gt;ENSEMBLE." data-i18n-html>LET'S BUILD<br>SOMETHING USEFUL<br>TOGETHER.</span>
       </article>
     </section>
 
     <section class="about section-panel reveal" id="about" aria-labelledby="about-title">
       <div>
-        <p class="micro-label">ABOUT ME</p>
-        <h2 id="about-title">Curiosity is the constant.</h2>
+        <p class="micro-label" data-en="ABOUT ME" data-fr="A PROPOS">ABOUT ME</p>
+        <h2 id="about-title" data-en="Curiosity is the constant." data-fr="La curiosite reste la constante.">Curiosity is the constant.</h2>
       </div>
       <div class="about-copy">
-        <p>
-          I grew up in Casablanca and naturally drifted toward computers, operating systems,
-          customization, and all the weird little details most people ignore. I learn best by
-          touching the system directly, testing limits, and solving the kind of problems that
-          do not come with clean instructions.
+        <p data-en="I grew up in Casablanca and naturally drifted toward computers, operating systems, customization, and all the weird little details most people ignore. I learn best by touching the system directly, testing limits, and solving the kind of problems that do not come with clean instructions." data-fr="J'ai grandi a Casablanca et je me suis naturellement tourne vers les ordinateurs, les systemes d'exploitation, la personnalisation, et tous les petits details que beaucoup de gens ignorent. J'apprends mieux en touchant directement au systeme, en testant ses limites, et en resolvant des problemes sans mode d'emploi parfait.">
+          I grew up in Casablanca and naturally drifted toward computers, operating systems, customization, and all the weird little details most people ignore. I learn best by touching the system directly, testing limits, and solving the kind of problems that do not come with clean instructions.
         </p>
-        <p>
-          What pulls me in most is the mix of technical depth and real usefulness: making a
-          machine faster, fixing something broken, automating a repetitive task, or shaping a
-          setup until it actually feels personal.
+        <p data-en="What pulls me in most is the mix of technical depth and real usefulness: making a machine faster, fixing something broken, automating a repetitive task, or shaping a setup until it actually feels personal." data-fr="Ce qui m'attire le plus, c'est le melange entre profondeur technique et utilite reelle : rendre une machine plus rapide, reparer quelque chose de casse, automatiser une tache repetitive, ou faconner une configuration jusqu'a ce qu'elle me corresponde vraiment.">
+          What pulls me in most is the mix of technical depth and real usefulness: making a machine faster, fixing something broken, automating a repetitive task, or shaping a setup until it actually feels personal.
         </p>
       </div>
       <div class="about-facts">
-        <span>Based in Casablanca</span>
-        <span>Focus: Linux, AI, systems</span>
-        <span>DET score 120</span>
-        <span>CS degree path 2026</span>
-        <span>GitHub + Google Developer profile</span>
+        <span data-en="Based in Casablanca" data-fr="Base a Casablanca">Based in Casablanca</span>
+        <span data-en="Focus: Linux, AI, systems" data-fr="Focus : Linux, IA, systemes">Focus: Linux, AI, systems</span>
+        <span data-en="DET score 120" data-fr="Score DET 120">DET score 120</span>
+        <span data-en="CS degree path 2026" data-fr="Parcours informatique 2026">CS degree path 2026</span>
+        <span data-en="GitHub + Google Developer profile" data-fr="Profils GitHub + Google Developer">GitHub + Google Developer profile</span>
       </div>
     </section>
 
     <section class="focus section-panel reveal" aria-labelledby="focus-title">
       <div class="section-bar compact">
-        <h2 id="focus-title">CURRENT FOCUS</h2>
+        <h2 id="focus-title" data-en="CURRENT FOCUS" data-fr="FOCUS ACTUEL">CURRENT FOCUS</h2>
       </div>
       <div class="compact-grid">
-        <article><h3>AI workflows that are actually useful</h3><p>Practical agents, prompts, and structured automation that earn their place in daily work.</p></article>
-        <article><h3>Prepping for a CS degree</h3><p>Sharpening fundamentals before starting Computer Science / Software Engineering in China.</p></article>
-        <article><h3>Self-hosting and system tuning</h3><p>Keeping personal infrastructure useful, fast, debuggable, and honest.</p></article>
-        <article><h3>Deeper software/systems direction</h3><p>Going further into programming, systems, and technical problem solving.</p></article>
+        <article><h3 data-en="AI workflows that are actually useful" data-fr="Workflows IA vraiment utiles">AI workflows that are actually useful</h3><p data-en="Practical agents, prompts, and structured automation that earn their place in daily work." data-fr="Agents pratiques, prompts et automatisations structurees qui meritent leur place dans le travail quotidien.">Practical agents, prompts, and structured automation that earn their place in daily work.</p></article>
+        <article><h3 data-en="Prepping for a CS degree" data-fr="Preparation aux etudes d'informatique">Prepping for a CS degree</h3><p data-en="Sharpening fundamentals before starting Computer Science / Software Engineering in China." data-fr="Renforcer les bases avant de commencer l'informatique / genie logiciel en Chine.">Sharpening fundamentals before starting Computer Science / Software Engineering in China.</p></article>
+        <article><h3 data-en="Self-hosting and system tuning" data-fr="Auto-hebergement et optimisation systeme">Self-hosting and system tuning</h3><p data-en="Keeping personal infrastructure useful, fast, debuggable, and honest." data-fr="Garder mon infrastructure personnelle utile, rapide, debuggable et claire.">Keeping personal infrastructure useful, fast, debuggable, and honest.</p></article>
+        <article><h3 data-en="Deeper software/systems direction" data-fr="Direction logiciel et systemes">Deeper software/systems direction</h3><p data-en="Going further into programming, systems, and technical problem solving." data-fr="Aller plus loin dans la programmation, les systemes et la resolution de problemes techniques.">Going further into programming, systems, and technical problem solving.</p></article>
       </div>
     </section>
 
     <section class="technical section-panel reveal" aria-labelledby="technical-title">
       <div class="section-bar compact">
-        <h2 id="technical-title">EXPERIENCE &amp; TECHNICAL AREAS</h2>
+        <h2 id="technical-title" data-en="EXPERIENCE &amp; TECHNICAL AREAS" data-fr="EXPERIENCE &amp; DOMAINES TECHNIQUES">EXPERIENCE &amp; TECHNICAL AREAS</h2>
       </div>
       <div class="area-grid">
-        <article><h3>Linux &amp; Desktop Environments</h3><p>Years of Linux use across distros and desktop environments, from lightweight window managers to full setups.</p><span>Linux / DEs / Tuning</span></article>
-        <article><h3>Self-hosting &amp; Homelab</h3><p>Running a home server for media, personal services, scripts, automation, and experiments.</p><span>Docker / Services / Scripts</span></article>
-        <article><h3>AI Automation &amp; Agents</h3><p>Practical workflows around agents, prompts, and structured automation.</p><span>Agents / Prompting / Workflows</span></article>
-        <article><h3>Troubleshooting Mindset</h3><p>Comfortable with broken systems, Windows issues, Android modding, hardware decisions, and edge cases.</p><span>Debugging / Repair / Edge cases</span></article>
-        <article><h3>Cybersecurity &amp; Programming</h3><p>Hands-on curiosity around security concepts, Java, and practical learning.</p><span>Security / Java / Learning</span></article>
-        <article><h3>Study Tools &amp; Web Building</h3><p>React-based tools and small systems that reduce friction in real daily work.</p><span>React / Tools / Web</span></article>
+        <article><h3>Linux &amp; Desktop Environments</h3><p data-en="Years of Linux use across distros and desktop environments, from lightweight window managers to full setups." data-fr="Des annees d'utilisation de Linux a travers plusieurs distributions et environnements, des window managers legers aux configurations completes.">Years of Linux use across distros and desktop environments, from lightweight window managers to full setups.</p><span>Linux / DEs / Tuning</span></article>
+        <article><h3>Self-hosting &amp; Homelab</h3><p data-en="Running a home server for media, personal services, scripts, automation, and experiments." data-fr="Un serveur maison pour les medias, services personnels, scripts, automatisations et experiences.">Running a home server for media, personal services, scripts, automation, and experiments.</p><span>Docker / Services / Scripts</span></article>
+        <article><h3>AI Automation &amp; Agents</h3><p data-en="Practical workflows around agents, prompts, and structured automation." data-fr="Workflows pratiques autour des agents, des prompts et de l'automatisation structuree.">Practical workflows around agents, prompts, and structured automation.</p><span>Agents / Prompting / Workflows</span></article>
+        <article><h3>Troubleshooting Mindset</h3><p data-en="Comfortable with broken systems, Windows issues, Android modding, hardware decisions, and edge cases." data-fr="A l'aise avec les systemes casses, les problemes Windows, Android, les choix materiels et les cas limites.">Comfortable with broken systems, Windows issues, Android modding, hardware decisions, and edge cases.</p><span>Debugging / Repair / Edge cases</span></article>
+        <article><h3>Cybersecurity &amp; Programming</h3><p data-en="Hands-on curiosity around security concepts and practical learning." data-fr="Curiosite pratique autour des concepts de securite et de l'apprentissage concret.">Hands-on curiosity around security concepts and practical learning.</p><span>Security / Learning</span></article>
+        <article><h3>Study Tools &amp; Web Building</h3><p data-en="Small web tools and systems that reduce friction in real daily work." data-fr="Petits outils web et systemes qui reduisent la friction dans le travail quotidien.">Small web tools and systems that reduce friction in real daily work.</p><span>Tools / Web / Practice</span></article>
       </div>
     </section>
 
     <section class="balance section-panel reveal" aria-labelledby="balance-title">
       <div>
-        <p class="micro-label">BALANCE</p>
-        <h2 id="balance-title">Outdoors keeps my thinking sharp.</h2>
+        <p class="micro-label" data-en="BALANCE" data-fr="EQUILIBRE">BALANCE</p>
+        <h2 id="balance-title" data-en="Outdoors keeps my thinking sharp." data-fr="Le plein air garde mon esprit clair.">Outdoors keeps my thinking sharp.</h2>
       </div>
-      <p>
-        Staying active helps me reset, focus better, and come back stronger when I am facing a hard problem.
-        I am especially drawn to story-driven and immersive games like The Last of Us, SOMA, Red Dead Redemption 2,
-        Cyberpunk 2077, Detroit: Become Human, and Control.
+      <p data-en="Staying active helps me reset, focus better, and come back stronger when I am facing a hard problem. I am especially drawn to story-driven and immersive games like The Last of Us, SOMA, Red Dead Redemption 2, Cyberpunk 2077, Detroit: Become Human, and Control." data-fr="Rester actif m'aide a reinitialiser mon energie, mieux me concentrer et revenir plus fort face a un probleme difficile. J'aime aussi les jeux immersifs et narratifs comme The Last of Us, SOMA, Red Dead Redemption 2, Cyberpunk 2077, Detroit: Become Human et Control.">
+        Staying active helps me reset, focus better, and come back stronger when I am facing a hard problem. I am especially drawn to story-driven and immersive games like The Last of Us, SOMA, Red Dead Redemption 2, Cyberpunk 2077, Detroit: Become Human, and Control.
       </p>
       <div class="interest-list">
         <span>Hiking</span><span>Cycling</span><span>Kayaking</span><span>Ice skating</span><span>Atmosphere-heavy games</span>
@@ -306,9 +298,9 @@
 
     <section class="contact section-panel reveal" id="contact" aria-labelledby="contact-title">
       <div class="contact-title">
-        <p class="micro-label">OPEN TO USEFUL PROJECTS</p>
-        <h2 id="contact-title">LET'S BUILD<br>SOMETHING USEFUL</h2>
-        <p>Have a project, technical problem, or opportunity worth talking through? Reach me directly.</p>
+        <p class="micro-label" data-en="OPEN TO USEFUL PROJECTS" data-fr="OUVERT AUX PROJETS UTILES">OPEN TO USEFUL PROJECTS</p>
+        <h2 id="contact-title" data-en="LET'S BUILD&lt;br&gt;SOMETHING USEFUL" data-fr="CONSTRUISONS&lt;br&gt;QUELQUE CHOSE D'UTILE" data-i18n-html>LET'S BUILD<br>SOMETHING USEFUL</h2>
+        <p data-en="Have a project, technical problem, or opportunity worth talking through? Reach me directly." data-fr="Un projet, un probleme technique ou une opportunite qui vaut une discussion ? Contacte-moi directement.">Have a project, technical problem, or opportunity worth talking through? Reach me directly.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:ilyasmohaimel@gmail.com"><span>Email</span><strong>ilyasmohaimel@gmail.com</strong></a>
@@ -328,9 +320,9 @@
   </main>
 
   <footer class="site-footer">
-    <span>&copy; 2026 Ilyas Mohaimel. All rights reserved.</span>
-    <span>Casablanca, Morocco.</span>
-    <span>Built with curiosity, systems thinking, and persistence.</span>
+    <span data-en="&copy; 2026 Ilyas Mohaimel. All rights reserved." data-fr="&copy; 2026 Ilyas Mohaimel. Tous droits reserves." data-i18n-html>&copy; 2026 Ilyas Mohaimel. All rights reserved.</span>
+    <span data-en="Casablanca, Morocco." data-fr="Casablanca, Maroc.">Casablanca, Morocco.</span>
+    <span data-en="Built with curiosity, systems thinking, and persistence." data-fr="Construit avec curiosite, pensee systeme et perseverance.">Built with curiosity, systems thinking, and persistence.</span>
   </footer>
 
   <script src="./script.js"></script>
