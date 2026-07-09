@@ -49,5 +49,5 @@ http
     });
   })
   .listen(port, () => {
-    console.log(`CV site running at http://localhost:${port}`);
+    console.log(`Portfolio site running at http://localhost:${port}`);
   });

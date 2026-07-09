@@ -1,8 +1,8 @@
 {
-  "name": "ilyas-cv-site",
+  "name": "ilyas-portfolio-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Personal CV website with room for future blog posts.",
+  "description": "Editorial one-page portfolio for Ilyas Mohaimel.",
   "scripts": {
     "start": "node server.js"
   }
