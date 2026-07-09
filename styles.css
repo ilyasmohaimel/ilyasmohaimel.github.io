@@ -414,9 +414,11 @@ h1 {
 .section-bar h2,
 .lower-grid h2,
 .about h2,
+.field-notes h2,
 .focus h2,
 .technical h2,
 .balance h2,
+.gaming h2,
 .contact h2 {
   color: var(--ink);
   font-family: var(--display);
@@ -774,6 +776,7 @@ h1 {
 }
 
 .about,
+.field-notes,
 .balance {
   display: grid;
   grid-template-columns: minmax(15rem, 0.75fr) minmax(0, 1fr);
@@ -805,6 +808,223 @@ h1 {
 .section-bar.compact {
   border-bottom: 0;
   padding-bottom: 0.5rem;
+}
+
+.field-notes {
+  display: block;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 0.85fr));
+  gap: 1px;
+  padding: 1rem 0 2rem;
+  background: rgb(74 92 106 / 0.28);
+}
+
+.note-card {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  min-height: 23rem;
+  padding: 1.15rem;
+  background: rgb(255 255 255 / 0.82);
+}
+
+.note-card-large {
+  min-height: 29rem;
+}
+
+.note-visual {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  border: 1px solid rgb(74 92 106 / 0.24);
+  background:
+    linear-gradient(135deg, rgb(243 248 251 / 0.92), rgb(255 255 255 / 0.7)),
+    var(--paper-blue);
+}
+
+.note-card-large .note-visual {
+  min-height: 17rem;
+}
+
+.terminal-mock,
+.flow-mock,
+.checks-mock {
+  width: min(78%, 22rem);
+}
+
+.terminal-mock {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+  padding: 3.5rem 2rem 1.7rem;
+  border: 4px solid var(--blue);
+  border-radius: 0.9rem;
+  background: var(--ink);
+  box-shadow: 0 18px 42px rgb(6 20 27 / 0.16);
+}
+
+.terminal-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 0.45rem;
+  width: 100%;
+  height: 2.3rem;
+  align-items: center;
+  padding-left: 1.15rem;
+  border-bottom: 3px solid var(--line);
+}
+
+.terminal-bar span {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.mock-line {
+  display: block;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.mock-line.short {
+  width: 42%;
+}
+
+.mock-line.medium {
+  width: 62%;
+}
+
+.mock-line.long {
+  width: 82%;
+}
+
+.terminal-caret {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-top: 4px solid var(--line);
+  border-right: 4px solid var(--line);
+  transform: translateY(-30%) rotate(45deg);
+}
+
+.flow-mock {
+  display: grid;
+  grid-template-columns: 4.4rem 1fr 4.4rem 1fr 4.4rem;
+  align-items: center;
+}
+
+.flow-node {
+  position: relative;
+  display: block;
+  width: 4.4rem;
+  aspect-ratio: 1;
+  border: 4px solid var(--blue);
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 0.9);
+}
+
+.flow-node::before,
+.flow-node::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 0.22rem;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.flow-node::before {
+  top: 1.35rem;
+}
+
+.flow-node::after {
+  top: 2.35rem;
+  right: 1.45rem;
+}
+
+.flow-node.active {
+  background: var(--ink);
+}
+
+.flow-node.active::before,
+.flow-node.active::after {
+  background: var(--line);
+}
+
+.flow-line {
+  display: block;
+  height: 4px;
+  background: var(--blue);
+}
+
+.checks-mock {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.2rem;
+  border: 4px solid var(--blue);
+  border-radius: 0.9rem;
+  background: rgb(255 255 255 / 0.9);
+}
+
+.checks-mock span {
+  display: grid;
+  grid-template-columns: 1.3rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.checks-mock i {
+  width: 1.3rem;
+  aspect-ratio: 1;
+  border: 3px solid var(--blue);
+  border-radius: 0.25rem;
+}
+
+.checks-mock span:first-child i,
+.checks-mock span:last-child i {
+  background:
+    linear-gradient(135deg, transparent 46%, var(--line) 47% 55%, transparent 56%),
+    var(--blue);
+}
+
+.checks-mock b {
+  display: block;
+  height: 0.3rem;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.checks-mock span:nth-child(2) b {
+  width: 68%;
+}
+
+.note-index {
+  color: var(--line-strong);
+  font-family: var(--display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.note-card h3 {
+  color: var(--ink);
+  font-size: 1.02rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.note-card p {
+  color: var(--muted);
 }
 
 .compact-grid,
@@ -840,11 +1060,13 @@ h1 {
   text-transform: uppercase;
 }
 
-.balance {
+.balance,
+.gaming {
   align-items: center;
 }
 
-.balance p {
+.balance p,
+.gaming-copy p {
   max-width: 56rem;
   font-size: clamp(1rem, 1.35vw, 1.18rem);
 }
@@ -853,16 +1075,70 @@ h1 {
   grid-column: 2;
 }
 
+.gaming {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.75fr) minmax(0, 1fr);
+  gap: clamp(1.2rem, 5vw, 5rem);
+  padding: clamp(2rem, 5vw, 4.5rem);
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgb(6 20 27 / 0.98), rgb(37 55 69 / 0.94)),
+    var(--ink);
+  box-shadow: 0 28px 70px rgb(6 20 27 / 0.12);
+}
+
+.gaming h2,
+.gaming .micro-label {
+  color: var(--white);
+}
+
+.gaming-copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.gaming-copy p {
+  color: var(--line);
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.game-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgb(204 208 207 / 0.42);
+  color: var(--white);
+  background: rgb(255 255 255 / 0.07);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .contact {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.85fr) minmax(20rem, 0.95fr) minmax(15rem, 0.55fr);
+  grid-template-columns: minmax(18rem, 0.78fr) minmax(22rem, 1fr) minmax(15rem, 0.55fr);
   gap: clamp(1.2rem, 4vw, 4rem);
-  align-items: center;
+  align-items: start;
   padding: clamp(2rem, 5vw, 4.5rem) 0;
 }
 
 .contact h2 {
-  font-size: clamp(3.6rem, 7vw, 7.5rem);
+  max-width: 7ch;
+  font-size: clamp(3.1rem, 6vw, 6.4rem);
+  line-height: 0.88;
+}
+
+html[lang="fr"] .contact h2 {
+  max-width: 8ch;
+  font-size: clamp(2.6rem, 4.9vw, 5.1rem);
+  line-height: 0.9;
 }
 
 .contact-title p {
@@ -1012,8 +1288,8 @@ h1 {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: none;
   transition: opacity 600ms ease, transform 600ms ease;
 }
 
@@ -1077,6 +1353,15 @@ h1 {
 
   .compact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-card,
+  .note-card-large {
+    min-height: auto;
   }
 
   .archive-grid {
@@ -1154,7 +1439,9 @@ h1 {
   .project-grid,
   .lower-grid,
   .about,
+  .field-notes,
   .balance,
+  .gaming,
   .contact,
   .area-grid {
     grid-template-columns: 1fr;
@@ -1168,6 +1455,10 @@ h1 {
   .about-facts,
   .interest-list {
     grid-column: auto;
+  }
+
+  .gaming {
+    padding: clamp(1.3rem, 5vw, 2rem);
   }
 
   .contact-links a {
