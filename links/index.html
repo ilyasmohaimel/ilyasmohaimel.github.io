@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Ilyas Mohaimel | Links</title>
+  <meta name="description" content="Official links for Ilyas Mohaimel, also known as Frost.">
+  <link rel="canonical" href="https://ilyasmohaimel.github.io/links/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ilyas Mohaimel | Links">
+  <meta property="og:description" content="Official links for Ilyas Mohaimel, also known as Frost.">
+  <meta property="og:url" content="https://ilyasmohaimel.github.io/links/">
+  <meta property="og:image" content="https://ilyasmohaimel.github.io/assets/ilyas-camera.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ilyas Mohaimel | Links">
+  <meta name="twitter:description" content="Official links for Ilyas Mohaimel, also known as Frost.">
+  <meta name="twitter:image" content="https://ilyasmohaimel.github.io/assets/ilyas-camera.png">
+  <style>
+    :root {
+      --ink: #0a1720;
+      --muted: #61717b;
+      --line: #d2d8dd;
+      --line-strong: #a6b1b8;
+      --paper: #fbfcfd;
+      --paper-2: #f2f6f8;
+      --white: #ffffff;
+      --shadow: 0 26px 90px rgba(10, 23, 32, 0.16);
+      --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      --body: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--body);
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(242, 246, 248, 0.96), rgba(255, 255, 255, 0.96) 36rem),
+        var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(102, 113, 123, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(102, 113, 123, 0.06) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid #243744; outline-offset: 4px; }
+
+    .page {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 28px 18px 32px;
+    }
+
+    .device {
+      width: min(100%, 540px);
+      margin: 0 auto;
+      border: 1px solid rgba(102, 113, 123, 0.28);
+      border-radius: 42px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 251, 0.96));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .device-inner {
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(102, 113, 123, 0.24);
+      border-radius: 42px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 6px 16px;
+      border-bottom: 1px solid rgba(102, 113, 123, 0.2);
+    }
+
+    .topbar .label {
+      display: grid;
+      gap: 4px;
+      color: #223440;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .lang {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .lang span {
+      min-width: 46px;
+      padding: 8px 14px;
+      border: 1px solid rgba(102, 113, 123, 0.24);
+      border-radius: 999px;
+      color: #243744;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-align: center;
+    }
+
+    .lang .active {
+      color: var(--white);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .hero-image {
+      margin: 18px 0 0;
+      border: 1px solid rgba(102, 113, 123, 0.24);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(242, 246, 248, 0.9), rgba(255, 255, 255, 0.96));
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      padding-top: 18px;
+    }
+
+    .eyebrow {
+      color: #425663;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 8px 0 0;
+      font-family: var(--display);
+      font-size: clamp(4.8rem, 12vw, 6.8rem);
+      line-height: 0.82;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .handle {
+      margin-top: 8px;
+      color: #33444f;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 1px solid var(--ink);
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { color: var(--white); background: var(--ink); }
+    .button.secondary { color: #233744; background: rgba(255, 255, 255, 0.78); }
+
+    .links {
+      display: grid;
+      gap: 0;
+      margin-top: 14px;
+      border: 1px solid rgba(102, 113, 123, 0.24);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(102, 113, 123, 0.16);
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(102, 113, 123, 0.35);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .row h2 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .row p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .arrow {
+      color: #1c2b35;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .footer {
+      padding: 14px 4px 0;
+      color: #74848d;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 18px 10px 24px; }
+      .device { border-radius: 30px; }
+      .device-inner { border-radius: 30px; padding: 14px; }
+      .topbar { padding-inline: 2px; }
+      .topbar .label { font-size: 11px; }
+      .lang span { min-width: 42px; padding-inline: 12px; }
+      .actions { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 38px minmax(0, 1fr) 18px; padding-inline: 12px; }
+      h1 { font-size: clamp(3.8rem, 19vw, 5.2rem); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="device" aria-labelledby="page-title">
+      <div class="device-inner">
+        <header class="topbar">
+          <div class="label">
+            <span>Constructor Systems</span>
+            <span>Creator Digital</span>
+          </div>
+          <div class="lang" aria-label="Language switch">
+            <span class="active">EN</span>
+            <span>FR</span>
+          </div>
+        </header>
+
+        <figure class="hero-image">
+          <img src="../assets/ilyas-camera.png" alt="Ilyas Mohaimel holding a camera">
+        </figure>
+
+        <section class="content">
+          <div class="eyebrow">Official links</div>
+          <h1 id="page-title">Ilyas Mohaimel</h1>
+          <div class="handle">@mhiml._</div>
+
+          <div class="actions" aria-label="Primary actions">
+            <a class="button primary" href="https://ilyasmohaimel.github.io/" target="_blank" rel="noreferrer">Visit portfolio</a>
+            <a class="button secondary" href="mailto:ilyasmohaimel@gmail.com">Email me</a>
+          </div>
+
+          <div class="links" aria-label="Official links">
+            <a class="row" href="mailto:ilyasmohaimel@gmail.com">
+              <span class="icon">M</span>
+              <span>
+                <h2>Email</h2>
+                <p>ilyasmohaimel@gmail.com</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="mailto:ilyasmohaimel@tutamail.com">
+              <span class="icon">T</span>
+              <span>
+                <h2>Tuta Mail</h2>
+                <p>ilyasmohaimel@tutamail.com</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://instagram.com/mhiml._" target="_blank" rel="noreferrer">
+              <span class="icon">IG</span>
+              <span>
+                <h2>Instagram</h2>
+                <p>@mhiml._</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://github.com/ilyasmohaimel" target="_blank" rel="noreferrer">
+              <span class="icon">GH</span>
+              <span>
+                <h2>GitHub</h2>
+                <p>github.com/ilyasmohaimel</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://g.dev/ilyasmohaimel" target="_blank" rel="noreferrer">
+              <span class="icon">G</span>
+              <span>
+                <h2>Google Developer</h2>
+                <p>g.dev/ilyasmohaimel</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://discord.com/users/711891007796412416" target="_blank" rel="noreferrer">
+              <span class="icon">D</span>
+              <span>
+                <h2>Discord</h2>
+                <p>discord.com/users/711891007796412416</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://ilyasmohaimel.github.io" target="_blank" rel="noreferrer">
+              <span class="icon">W</span>
+              <span>
+                <h2>Website</h2>
+                <p>ilyasmohaimel.github.io</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="row" href="https://x.com/LookFrost289116" target="_blank" rel="noreferrer">
+              <span class="icon">X</span>
+              <span>
+                <h2>X</h2>
+                <p>@LookFrost289116</p>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </section>
+
+        <div class="footer">Ilyas Mohaimel - Official Links</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
