@@ -22,7 +22,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  color-scheme: light;
+  background: var(--paper);
+  color-scheme: only light;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
+  color-scheme: only light;
 }
 
 body::before {
@@ -312,7 +313,7 @@ h1 {
 
 .button.primary {
   color: var(--white);
-  background: var(--ink);
+  background: linear-gradient(180deg, var(--blue-mid), var(--blue));
 }
 
 .button.secondary {
@@ -742,17 +743,18 @@ h1 {
   justify-content: space-between;
   gap: 2rem;
   min-height: 100%;
-  color: var(--white);
+  color: var(--ink);
   background:
-    linear-gradient(135deg, rgb(17 33 45 / 0.96), rgb(37 55 69 / 0.9)),
-    var(--blue);
+    linear-gradient(135deg, rgb(255 255 255 / 0.96), rgb(243 248 251 / 0.98)),
+    var(--paper);
+  box-shadow: 0 18px 42px rgb(6 20 27 / 0.08);
 }
 
 .quote-mark {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 4.5rem;
   line-height: 0.7;
-  color: var(--line);
+  color: var(--blue-mid);
 }
 
 .quote-card p {
@@ -769,7 +771,7 @@ h1 {
 }
 
 .quote-card span:last-child {
-  color: var(--line);
+  color: var(--blue-mid);
   font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -1080,16 +1082,16 @@ h1 {
   grid-template-columns: minmax(15rem, 0.75fr) minmax(0, 1fr);
   gap: clamp(1.2rem, 5vw, 5rem);
   padding: clamp(2rem, 5vw, 4.5rem);
-  color: var(--white);
+  color: var(--ink);
   background:
-    linear-gradient(135deg, rgb(6 20 27 / 0.98), rgb(37 55 69 / 0.94)),
-    var(--ink);
-  box-shadow: 0 28px 70px rgb(6 20 27 / 0.12);
+    linear-gradient(135deg, rgb(255 255 255 / 0.98), rgb(243 248 251 / 0.96)),
+    var(--paper);
+  box-shadow: 0 18px 42px rgb(6 20 27 / 0.08);
 }
 
 .gaming h2,
 .gaming .micro-label {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .gaming-copy {
@@ -1098,7 +1100,7 @@ h1 {
 }
 
 .gaming-copy p {
-  color: var(--line);
+  color: var(--muted);
 }
 
 .game-list {
@@ -1112,9 +1114,9 @@ h1 {
   align-items: center;
   min-height: 2.1rem;
   padding: 0 0.75rem;
-  border: 1px solid rgb(204 208 207 / 0.42);
-  color: var(--white);
-  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(74 92 106 / 0.22);
+  color: var(--blue);
+  background: rgb(255 255 255 / 0.8);
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -1182,20 +1184,20 @@ html[lang="fr"] .contact h2 {
   min-height: 20rem;
   padding: 1.35rem;
   border: 1px solid rgb(74 92 106 / 0.35);
-  color: var(--line);
-  background: var(--ink);
-  box-shadow: var(--shadow);
+  color: var(--muted);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.98), rgb(243 248 251 / 0.94));
+  box-shadow: 0 18px 42px rgb(6 20 27 / 0.08);
 }
 
 .system-card span {
-  color: var(--line-strong);
+  color: var(--blue-mid);
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 
 .system-card strong {
-  color: var(--white);
+  color: var(--ink);
   font-family: var(--display);
   font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 400;
@@ -1203,7 +1205,7 @@ html[lang="fr"] .contact h2 {
 }
 
 .system-card code {
-  color: var(--line);
+  color: var(--blue-mid);
   font-family: "SF Mono", Consolas, ui-monospace, monospace;
   font-size: 0.76rem;
 }
@@ -1409,27 +1411,27 @@ html[lang="fr"] .contact h2 {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .poster-word {
-    top: 4rem;
-    font-size: clamp(4.1rem, 22vw, 9rem);
+    display: none;
   }
 
   .hero-copy {
     max-width: none;
-    padding-top: 4.5rem;
+    padding-top: 1rem;
   }
 
   h1 {
-    font-size: clamp(4.1rem, 20vw, 7rem);
+    font-size: clamp(3.5rem, 18vw, 6rem);
   }
 
   .hero-portrait {
-    width: min(94vw, 470px);
+    width: min(92vw, 430px);
     min-width: 0;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 
   .quick-facts {
@@ -1461,6 +1463,12 @@ html[lang="fr"] .contact h2 {
     padding: clamp(1.3rem, 5vw, 2rem);
   }
 
+  .quote-card,
+  .gaming,
+  .system-card {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.98), rgb(245 249 251 / 0.94));
+  }
+
   .contact-links a {
     grid-template-columns: 1fr;
     gap: 0.2rem;
@@ -1468,6 +1476,7 @@ html[lang="fr"] .contact h2 {
 
   .archive-hero {
     min-height: auto;
+    padding-top: 4.5rem;
   }
 }
 
@@ -1493,9 +1502,53 @@ html[lang="fr"] .contact h2 {
     width: 100%;
   }
 
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hello-line {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 21vw, 4.8rem);
+  }
+
+  .role {
+    max-width: 15ch;
+    font-size: 0.95rem;
+  }
+
+  .hero-text {
+    font-size: 0.98rem;
+  }
+
+  .hero-portrait {
+    width: min(100%, 380px);
+  }
+
+  .quick-facts {
+    margin-top: 0.5rem;
+  }
+
+  .fact {
+    min-height: 6rem;
+    padding: 0.95rem;
+  }
+
   .section-bar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .archive-hero h1 {
+    font-size: clamp(2.8rem, 18vw, 4.8rem);
+  }
+
+  .archive-hero p:not(.micro-label) {
+    font-size: 0.98rem;
   }
 
   .timeline-row {
