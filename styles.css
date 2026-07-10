@@ -1372,6 +1372,10 @@ html[lang="fr"] .contact h2 {
 }
 
 @media (max-width: 820px) {
+  :root {
+    --display: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
+  }
+
   .site-header,
   .section-panel,
   .site-footer {
