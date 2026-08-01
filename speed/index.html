@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Internet Speed Test</title>
+  <meta name="description" content="Free internet speed test — measure download, upload, and latency using Cloudflare's CDN.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; position: absolute; top: 24px; left: 24px; }
+    .logo svg { width: 48px; height: 48px; }
+    .logo span { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo span em { font-style: normal; color: #66c2ff; }
+    .top-right { position: absolute; top: 24px; right: 24px; font-size: 0.9rem; color: #999; }
+    .main { text-align: center; }
+    .speed-value {
+      font-size: clamp(6rem, 22vw, 15rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -4px;
+      font-variant-numeric: tabular-nums;
+    }
+    .speed-units { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #bbb; margin-top: 8px; }
+    .status-msg { margin-top: 20px; min-height: 1.6em; font-size: 1.1rem; color: #999; }
+    .error-msg { margin-top: 10px; color: #ff6b6b; font-size: 0.95rem; min-height: 1.4em; }
+    .stats { display: flex; gap: 48px; margin-top: 36px; min-height: 60px; }
+    .stat { text-align: center; }
+    .stat .label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+    .stat .val { font-size: 1.8rem; font-weight: 700; margin-top: 4px; }
+    .btn {
+      margin-top: 40px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 999px;
+      padding: 16px 64px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.15s;
+      user-select: none;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn:active { transform: scale(0.98); }
+    .btn.running { background: #ff5a5a; color: #fff; }
+    .progress { margin-top: 24px; width: 320px; height: 4px; background: #222; border-radius: 2px; overflow: hidden; display: none; }
+    .progress .bar { height: 100%; width: 0%; background: #66c2ff; transition: width 0.3s; }
+    footer { position: absolute; bottom: 20px; font-size: 0.8rem; color: #555; }
+    footer a { color: #777; }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <rect x="4" y="4" width="56" height="56" rx="14" fill="#0d47a1"/>
+      <path d="M32 14v36M32 50l-12-12M32 50l12-12M14 26l18 12 18-12" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>FAST<em>.COM</em></span>
+  </div>
+  <div class="top-right" id="client-info">testing from your browser</div>
+
+  <div class="main">
+    <div class="speed-value" id="speed-value">—</div>
+    <div class="speed-units" id="speed-units"></div>
+    <div class="status-msg" id="status"></div>
+    <div class="error-msg" id="error"></div>
+    <div class="stats">
+      <div class="stat"><div class="label">Latency</div><div class="val" id="stat-latency">—</div></div>
+      <div class="stat"><div class="label">Download</div><div class="val" id="stat-download">—</div></div>
+      <div class="stat"><div class="label">Upload</div><div class="val" id="stat-upload">—</div></div>
+    </div>
+    <div class="progress" id="progress"><div class="bar" id="progress-bar"></div></div>
+    <button class="btn" id="btn">GO</button>
+  </div>
+
+  <footer>Speed test powered by <a href="https://developers.cloudflare.com/speed/" target="_blank" rel="noopener">Cloudflare</a> · UI inspired by <a href="https://fast.com" target="_blank" rel="noopener">Fast.com</a></footer>
+
+  <script>
+    const DOWN_URL = "https://speed.cloudflare.com/__down?bytes=25000000";
+    const UP_URL = "https://speed.cloudflare.com/__up";
+    const LATENCY_URL = "https://speed.cloudflare.com/__down?bytes=0";
+
+    const $ = (id) => document.getElementById(id);
+    const btn = $("btn");
+    let running = false;
+    let cancelled = false;
+
+    function fmt(bps) {
+      if (!isFinite(bps) || bps <= 0) return "—";
+      if (bps >= 1e9) return (bps / 1e9).toFixed(2);
+      if (bps >= 1e6) return (bps / 1e6).toFixed(1);
+      return (bps / 1e3).toFixed(0);
+    }
+    function units(bps) {
+      if (!isFinite(bps) || bps <= 0) return "";
+      if (bps >= 1e9) return "Gbps";
+      if (bps >= 1e6) return "Mbps";
+      return "Kbps";
+    }
+
+    async function latency() {
+      const samples = [];
+      for (let i = 0; i < 5; i++) {
+        const t0 = performance.now();
+        try {
+          await fetch(LATENCY_URL + "&r=" + Math.random(), { cache: "no-store" });
+          samples.push(performance.now() - t0);
+        } catch (e) {}
+      }
+      samples.sort((a, b) => a - b);
+      return samples.length ? samples[0] : 0;
+    }
+
+    async function download() {
+      const t0 = performance.now();
+      const res = await fetch(DOWN_URL + "&r=" + Math.random(), { cache: "no-store" });
+      const reader = res.body.getReader();
+      let bytes = 0;
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        bytes += value ? value.length : 0;
+      }
+      return (bytes * 8) / ((performance.now() - t0) / 1000);
+    }
+
+    async function upload() {
+      const payload = new Uint8Array(10 * 1024 * 1024);
+      const t0 = performance.now();
+      await fetch(UP_URL + "?r=" + Math.random(), { method: "POST", body: payload, cache: "no-store" });
+      return (payload.length * 8) / ((performance.now() - t0) / 1000);
+    }
+
+    function setPhase(p, msg) {
+      $("status").textContent = msg || "";
+      $("error").textContent = "";
+      if (p === "running") {
+        btn.textContent = "CANCEL";
+        btn.classList.add("running");
+        $("progress").style.display = "block";
+      } else {
+        btn.textContent = "GO";
+        btn.classList.remove("running");
+        $("progress").style.display = "none";
+      }
+    }
+
+    btn.addEventListener("click", async () => {
+      if (running) {
+        cancelled = true;
+        running = false;
+        setPhase("idle");
+        $("speed-value").textContent = "—";
+        $("speed-units").textContent = "";
+        return;
+      }
+      running = true;
+      cancelled = false;
+      $("speed-value").textContent = "…";
+      $("speed-units").textContent = "TESTING";
+      $("stat-latency").textContent = "—";
+      $("stat-download").textContent = "—";
+      $("stat-upload").textContent = "—";
+      setPhase("running", "Testing latency…");
+      try {
+        const ping = await latency();
+        if (cancelled) return;
+        $("stat-latency").textContent = Math.round(ping) + " ms";
+        $("progress-bar").style.width = "33%";
+
+        setPhase("running", "Measuring download…");
+        const down = await download();
+        if (cancelled) return;
+        $("stat-download").textContent = fmt(down) + " " + units(down);
+        $("speed-value").textContent = fmt(down);
+        $("speed-units").textContent = units(down);
+        $("progress-bar").style.width = "66%";
+
+        setPhase("running", "Measuring upload…");
+        const up = await upload();
+        if (cancelled) return;
+        $("stat-upload").textContent = fmt(up) + " " + units(up);
+        $("progress-bar").style.width = "100%";
+
+        setPhase("done", "Your Internet speed is");
+      } catch (e) {
+        if (!cancelled) {
+          setPhase("error");
+          $("error").textContent = "Could not reach the test servers. Check your connection and try again.";
+          $("speed-value").textContent = "—";
+          $("speed-units").textContent = "";
+        }
+      } finally {
+        running = false;
+      }
+    });
+  </script>
+</body>
+</html>
